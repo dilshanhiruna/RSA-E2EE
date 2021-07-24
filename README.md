@@ -2,8 +2,8 @@
 
 ## How to Run
 
-1- Create server public key and private key\
-run python script\
+1- Create server public key and private key<br/>
+run python script in server directory<br/>
 >import index\
 >index.generate_keyPair_1()
 
@@ -16,11 +16,11 @@ run "npm start" in client directory
 (now the client public key is encrypted by the server public key and has been pass to the server)
 
 4- decrypt the client public key using server private key\
-run python script\
+run python script
 >import index\
 >index.decryptClientPublicKey()
 
-5- generate 2nd key pair (public/private)\
+5- generate 2nd key pair (public/private)
 >index.generate_keyPair_2()
 
 All the generated keys are saved in MySQL Database\
