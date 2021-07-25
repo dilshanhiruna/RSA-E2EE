@@ -77,16 +77,16 @@ def decryptClientPublicKey():  #decrypts the client public key and prints it
     print(decryption(server_privateKey_1, encrypted_client_key))
    
 
-def encryptServerPublicKey2():
-    client_public_key = open('keys/clientPublicKey.pem').read()
+def encryptServerPublicKey2(): # the function for encrypting server public key 2 by client public key
+    client_public_key = open('keys/clientPublicKey.pem').read() #get client public key
     encrypted_client_key = str.encode(client_public_key)
-    server_privateKey_1 = RSA.importKey(open('keys/private_1.pem').read())
+    server_privateKey_1 = RSA.importKey(open('keys/private_1.pem').read()) #get server private key 1
     
     server_publicKey_2 = RSA.importKey(open('keys/public_2.pem').read())
-    public_client_key = decryption(server_privateKey_1, encrypted_client_key)
-    encrypted_server_publicKey_2 =encryption(public_client_key,server_publicKey_2)
+    public_client_key = decryption(server_privateKey_1, encrypted_client_key) #decrypts the client public key 
+    encrypted_server_publicKey_2 =encryption(public_client_key,server_publicKey_2) # encrypt server public key 2 by client public key (error occurs here)
     file_out = open("keys/encrypted_server_publicKey_2.pem", "wb")
-    file_out.write("encrypted_server_publicKey_2")
+    file_out.write(encrypted_server_publicKey_2)
     file_out.close()
 
 # encryptServerPublicKey2()

@@ -8,7 +8,7 @@ import dbconnection
 app = Flask(__name__)
 CORS(app)
 
-key = open('keys/public_1.pem').read()
+key = open('keys/public_1.pem').read() # importing server public key 1
 
 
 @app.route("/")
@@ -29,7 +29,7 @@ def starting_url():
     clientKey =str(a_value) 
     sql = "UPDATE server SET clientPublicKey = '"+clientKey+"'"
     val = ("private_key")
-    dbconnection.cursor.execute(sql,val)
+    dbconnection.cursor.execute(sql,val) #save client public key in DB
     dbconnection.connection.commit()
     f.write(clientKey)
 
