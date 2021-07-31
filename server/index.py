@@ -10,7 +10,7 @@ import dbconnection
 
 
 def generate_keyPair_1():
-    key = RSA.generate(4096)
+    key = RSA.generate(2048)
     private_key = key.export_key()
     # sql = "INSERT INTO server (privateKey_1) VALUES ('%s')"
     sql = "UPDATE server SET privateKey_1 = '"+private_key.decode('utf-8')+"'"

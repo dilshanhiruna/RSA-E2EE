@@ -22,7 +22,6 @@ const RSA = () => {
       .get("http://127.0.0.1:5000/serverkey")
       .then((res) => {
         setServerPubKey(res.data.Key); //store key 1
-        console.log(server_public_key); //print key 1
       })
       .catch((e) => {
         console.log(e);
@@ -58,6 +57,7 @@ const RSA = () => {
       )
       .then(() => {
         console.log(encrypted_client_public_key); //print encryped client public key
+        console.log(server_public_key); //print key 1
       })
       .catch((e) => {
         console.log(e);
